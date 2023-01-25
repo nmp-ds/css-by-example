@@ -12,25 +12,37 @@ const exampleClasses = 'p-4 rounded-2 text-white flex items-center justify-cente
   background-size: 7.07px 7.07px;
 }
 .bg-stripes-purple {
-    background-color: #c084fc1a;
-    background-image: linear-gradient(135deg,#a855f780 10%,transparent 0,transparent 50%,#a855f780 0,#a855f780 60%,transparent 0,transparent);
-    background-size: 7.07px 7.07px;
+  background-color: #c084fc1a;
+  background-image: linear-gradient(135deg,#a855f780 10%,transparent 0,transparent 50%,#a855f780 0,#a855f780 60%,transparent 0,transparent);
+  background-size: 7.07px 7.07px;
 }
 .bg-stripes-pink {
-    background-color: #f472b61a;
-    background-image: linear-gradient(135deg,#ec489980 10%,transparent 0,transparent 50%,#ec489980 0,#ec489980 60%,transparent 0,transparent);
-    background-size: 7.07px 7.07px;
+  background-color: #f472b61a;
+  background-image: linear-gradient(135deg,#ec489980 10%,transparent 0,transparent 50%,#ec489980 0,#ec489980 60%,transparent 0,transparent);
+  background-size: 7.07px 7.07px;
 }
 .bg-stripes-indigo {
-    background-color: #818cf81a;
-    background-image: linear-gradient(135deg,#6366f180 10%,transparent 0,transparent 50%,#6366f180 0,#6366f180 60%,transparent 0,transparent);
-    background-size: 7.07px 7.07px;
+  background-color: #818cf81a;
+  background-image: linear-gradient(135deg,#6366f180 10%,transparent 0,transparent 50%,#6366f180 0,#6366f180 60%,transparent 0,transparent);
+  background-size: 7.07px 7.07px;
 }
 .bg-stripes-blue {
-    background-color: #60a5fa1a;
-    background-image: linear-gradient(135deg,#3b82f680 10%,transparent 0,transparent 50%,#3b82f680 0,#3b82f680 60%,transparent 0,transparent);
-    background-size: 7.07px 7.07px;
+  background-color: #60a5fa1a;
+  background-image: linear-gradient(135deg,#3b82f680 10%,transparent 0,transparent 50%,#3b82f680 0,#3b82f680 60%,transparent 0,transparent);
+  background-size: 7.07px 7.07px;
 }
+.bg-stripes-fuchsia {
+  background-color: #e879f91a;
+  background-image: linear-gradient(135deg,#d946ef80 10%,transparent 0,transparent 50%,#d946ef80 0,#d946ef80 60%,transparent 0,transparent);
+  background-size: 7.07px 7.07px;
+}
+
+/* Support, yay or nay? They are nice */
+/* Same effect as -m-4 on parent and m-4 on children */ 
+.space-x-4 > * + * {
+  margin-left: 1rem; 
+}
+
 </style>
 <template>
   <h1>Basic usage</h1>
@@ -68,6 +80,7 @@ const exampleClasses = 'p-4 rounded-2 text-white flex items-center justify-cente
   </container>
   <h2>Code example</h2>
   <container>
+    <!-- Placeholder for a syntax-higlighter -->
     <syntax-highlighter>
       <!--
         <div class="pt-6 ...">pt-6</div>
@@ -258,6 +271,33 @@ const exampleClasses = 'p-4 rounded-2 text-white flex items-center justify-cente
       <!--
         <div class="w-36 h-16 bg-sky-400 opacity-20 ..."></div>
         <div class="-mt-8 bg-sky-300 ...">-mt-8</div>
+      -->
+    </syntax-highlighter>    
+  </container>
+
+
+
+  <h1>Add horizontal space between children</h1>
+  <container>
+    <box class="relative rounded-xl overflow-auto p-8">
+      <div class="flex justify-start font-mono text-white text-sm font-bold leading-6">
+        <div class="flex space-x-4 bg-stripes-fuchsia rounded-lg">
+          <div class="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500">01</div>
+          <div class="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500">02</div>
+          <div class="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-fuchsia-500">03</div>
+        </div>
+      </div>
+    </box>
+  </container>
+  <h2>Code example</h2>
+  <container>
+    <syntax-highlighter>
+      <!--
+        <div class="flex space-x-4 ...">
+          <div>01</div>
+          <div>02</div>
+          <div>03</div>
+        </div>
       -->
     </syntax-highlighter>    
   </container>
