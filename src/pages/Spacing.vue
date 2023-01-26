@@ -7,37 +7,6 @@ import WidthController from '../components/WidthController.vue'
 const exampleClasses = 'p-4 rounded-2 text-white flex items-center justify-center'
 </script>
 <style>
-
-.bg-stripes-white {
-  background-image: linear-gradient(135deg,#ffffffbf 10%,transparent 0,transparent 50%,hsla(0,0%,100%,.75) 0,hsla(0,0%,100%,.75) 60%,transparent 0,transparent);
-  background-size: 7.07px 7.07px;
-}
-.bg-stripes-purple {
-  background-color: #c084fc1a;
-  background-image: linear-gradient(135deg,#a855f780 10%,transparent 0,transparent 50%,#a855f780 0,#a855f780 60%,transparent 0,transparent);
-  background-size: 7.07px 7.07px;
-}
-.bg-stripes-pink {
-  background-color: #f472b61a;
-  background-image: linear-gradient(135deg,#ec489980 10%,transparent 0,transparent 50%,#ec489980 0,#ec489980 60%,transparent 0,transparent);
-  background-size: 7.07px 7.07px;
-}
-.bg-stripes-indigo {
-  background-color: #818cf81a;
-  background-image: linear-gradient(135deg,#6366f180 10%,transparent 0,transparent 50%,#6366f180 0,#6366f180 60%,transparent 0,transparent);
-  background-size: 7.07px 7.07px;
-}
-.bg-stripes-blue {
-  background-color: #60a5fa1a;
-  background-image: linear-gradient(135deg,#3b82f680 10%,transparent 0,transparent 50%,#3b82f680 0,#3b82f680 60%,transparent 0,transparent);
-  background-size: 7.07px 7.07px;
-}
-.bg-stripes-fuchsia {
-  background-color: #e879f91a;
-  background-image: linear-gradient(135deg,#d946ef80 10%,transparent 0,transparent 50%,#d946ef80 0,#d946ef80 60%,transparent 0,transparent);
-  background-size: 7.07px 7.07px;
-}
-
 /* Support, yay or nay? They are nice */
 /* Same effect as -m-4 on parent and m-4 on children */ 
 .space-x-4 > * + * {
@@ -47,13 +16,7 @@ const exampleClasses = 'p-4 rounded-2 text-white flex items-center justify-cente
 </style>
 <template>
 
-
   <!-- **** -->
-
-
-
-
-
 
   <h1>Basic usage</h1>
   <container>
