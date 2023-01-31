@@ -1,22 +1,26 @@
 <script setup>
-// Note there's a way we can just import these globally so we don't have to do it in every page
-import Box from '../components/Box.vue'
-import Container from '../components/Container.vue'
-import WidthController from '../components/WidthController.vue'
+  // Note there's a way we can just import these globally so we don't have to do it in every page
+  import Box from '../components/Box.vue'
+  import Container from '../components/Container.vue'
+  import WidthController from '../components/WidthController.vue'
 
-const exampleClasses = 'p-4 rounded-2 text-white flex items-center justify-center'
+  const exampleClasses = 'p-4 rounded-2 text-white flex items-center justify-center'
 </script>
 <style>
-/* Support, yay or nay? They are nice */
-/* Same effect as -m-4 on parent and m-4 on children */ 
-.space-x-4 > * + * {
-  margin-left: 1rem; 
-}
 
+  /* Support, yay or nay? They are nice */
+  /* Same effect as -m-4 on parent and m-4 on children */ 
+  .space-x-4 > * + * {
+    margin-left: 1rem; 
+  }
+  .space-y-4 > * + * {
+    margin-top: 1rem; 
+  }
+  .space-x-reverse > * + * {	
+    --w-space-x-reverse: 1;
+  }
 </style>
 <template>
-
-  <!-- **** -->
 
   <h1>Basic usage</h1>
   <container>
@@ -274,4 +278,55 @@ const exampleClasses = 'p-4 rounded-2 text-white flex items-center justify-cente
       -->
     </syntax-highlighter>    
   </container>
+
+  <h1>Add vertical space between children</h1>
+  <container>
+    <div class="relative rounded-xl overflow-auto p-8">
+      <div class="flex flex-col justify-center text-center w-full font-mono text-white text-sm font-bold leading-6">
+        <box striped class="flex flex-col space-y-4 bg-stripes-indigo rounded-lg" fg-color="var(--tw-indigo-fg)" bg-color="var(--tw-indigo-bg)">
+          <div class="p-4 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">01</div>
+          <div class="p-4 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">02</div>
+          <div class="p-4 flex items-center justify-center shadow-lg rounded-lg bg-indigo-500">03</div>
+        </box>
+      </div>
+    </div>
+  </container>
+  <h2>Code example</h2>
+  <container>
+    <syntax-highlighter>
+      <!--
+        <div class="flex flex-col space-y-4 ...">
+          <div>01</div>
+          <div>02</div>
+          <div>03</div>
+        </div>
+      -->
+    </syntax-highlighter>    
+  </container>
+
+  <h1>Reversing children order</h1>
+  <container>
+    <div class="relative rounded-xl overflow-auto p-8">
+      <div class="flex justify-end font-mono text-white text-sm font-bold leading-6">
+        <box striped class="flex flex-row-reverse space-x-4 space-x-reverse rounded-lg" fg-color="var(--tw-cyan-fg)" bg-color="var(--tw-cyan-bg)">
+          <div class="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500">01</div>
+          <div class="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500">02</div>
+          <div class="w-14 h-14 flex items-center justify-center shadow-lg rounded-lg bg-cyan-500">03</div>
+        </box>
+      </div>
+    </div>
+  </container>
+  <h2>Code example</h2>
+  <container>
+    <syntax-highlighter>
+      <!--
+        <div class="flex flex-row-reverse space-x-4 space-x-reverse ...">
+          <div>01</div>
+          <div>02</div>
+          <div>03</div>
+        </div>
+      -->
+    </syntax-highlighter>    
+  </container>
+
 </template>
